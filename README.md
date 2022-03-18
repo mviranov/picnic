@@ -9,7 +9,7 @@ Hello !
 
   ```  helm install elasticsearch-multi-master elastic/elasticsearch -f ./master.yaml
     helm install elasticsearch-multi-data elastic/elasticsearch -f ./data.yaml
-    helm install elasticsearch-multi-client elastic/elasticsearch -f ./client.yaml```
+    helm install elasticsearch-multi-client elastic/elasticsearch -f ./client.yaml ```
 
 3. Wait for cluster members to deploy and confirm completion:
 
