@@ -1,0 +1,33 @@
+# client.yaml
+---
+clusterName: "elasticsearch"
+nodeGroup: "client"
+roles:
+  master: "false"
+  ingest: "false"
+  data: "false"
+replicas: 2
+service:
+  type: "LoadBalancer"
+
+antiAffinity: "soft"
+
+
+esJavaOpts: "-Xmx128m -Xms128m"
+
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "512M"
+  limits:
+    cpu: "1000m"
+    memory: "512M"
+
+
+volumeClaimTemplate:
+  accessModes: [ "ReadWriteOnce" ]
+  storageClassName: "standard"
+  resources:
+    requests:
+      storage: 100M
