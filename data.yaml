@@ -1,0 +1,32 @@
+# data.yaml
+---
+clusterName: "elasticsearch"
+nodeGroup: "data"
+roles:
+  master: "false"
+  ingest: "true"
+  data: "true"
+replicas: 2
+
+
+antiAffinity: "soft"
+
+
+esJavaOpts: "-Xmx128m -Xms128m"
+
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "512M"
+  limits:
+    cpu: "1000m"
+    memory: "512M"
+
+
+volumeClaimTemplate:
+  accessModes: [ "ReadWriteOnce" ]
+  storageClassName: "standard"
+  resources:
+    requests:
+      storage: 100M
