@@ -2,28 +2,28 @@ Hello !
 
 1. To start installing Elasticsearch, add the elastic repository in Helm:
 
-    helm repo add elastic https://helm.elastic.co
+   ``` helm repo add elastic https://helm.elastic.co```
 
 
 2. Use the helm install command three times, once for each custom YAML file created in the previous step:
 
-    helm install elasticsearch-multi-master elastic/elasticsearch -f ./master.yaml
+  ```  helm install elasticsearch-multi-master elastic/elasticsearch -f ./master.yaml
     helm install elasticsearch-multi-data elastic/elasticsearch -f ./data.yaml
-    helm install elasticsearch-multi-client elastic/elasticsearch -f ./client.yaml
+    helm install elasticsearch-multi-client elastic/elasticsearch -f ./client.yaml```
 
 3. Wait for cluster members to deploy and confirm completion:
 
-    kubectl get pods
+   ``` kubectl get pods```
 
     
 4. To access Elasticsearch locally, forward port 9200 using the kubectl command:
 
-    kubectl port-forward service/elasticsearch-master
+   ``` kubectl port-forward service/elasticsearch-master```
 
 
 5. In another terminal tab, test the connection with:
 
-    curl localhost:9200
+    ```curl localhost:9200```
 
     Alternatively, access localhost:9200 from the browser.
 
